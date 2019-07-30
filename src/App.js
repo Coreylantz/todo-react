@@ -7,25 +7,18 @@ class App extends React.Component {
     todolist: []
   }
 
-  constructor(props) {
-    super(props);
-    this.addTodo = this.addTodo.bind(this);
-    this.updateText = this.updateText.bind(this);
-    this.updateTodo = this.updateTodo.bind(this);
-  }
-
-  addTodo(e) {
+  addTodo = (e) => {
     e.preventDefault();
     this.setState({todolist: [...this.state.todolist, this.state.text], text: ""})
   }
 
-  updateText(e) {
+  updateText = (e) => {
     this.setState({
       text: e.target.value
     })
   }
 
-  updateTodo(e) {
+  updateTodo = (e) => {
     if(e.target.checked) {
       const target = this.state.todolist.indexOf(e.target.value);
       console.log(this.state.todolist, target);
